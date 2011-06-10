@@ -1,0 +1,8 @@
+<%-
+# app/views/posts/show.html.erb
+-%>
+
+<h2><%= @post.title %></h2>
+
+Posted at: <%= @post.created_at %> by <strong><%= @post.author %></strong><br />
+<%= @post.body %>

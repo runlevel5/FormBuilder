@@ -1,0 +1,165 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (156.0ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (94.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110610001950)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110610001950')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-06-10 10:29:16) [GET]
+
+ActionController::RoutingError (No route matches "/user/signin/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-06-10 10:29:27) [GET]
+
+ActionController::RoutingError (No route matches "/blog/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-06-10 10:29:43) [GET]
+
+ActionController::RoutingError (No route matches "/blog/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-06-10 10:30:06) [GET]
+
+ActionController::RoutingError (No route matches "/post/new" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2011-06-10 10:30:10) [GET]
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+
+ActionView::MissingTemplate (Missing template posts/new.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2011-06-10 10:33:36) [GET]
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering posts/new
+
+ActionView::TemplateError (undefined method `posts_path' for #<ActionView::Base:0x35b8b5c>) on line #9 of app/views/posts/new.html.erb:
+6: 
+7: <%= error_messages_for 'post' %>
+8: 
+9: <% form_for @post do |post_form| %>
+10:   <p>
+11:     <strong>Title:</strong>
+12:     <%= post_form.text_field :title %>
+
+    app/views/posts/new.html.erb:9
+
+Rendered rescues/_trace (109.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#new (for 127.0.0.1 at 2011-06-10 10:35:34) [GET]
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Rendering posts/new
+Completed in 1390ms (View: 1390, DB: 0) | 200 OK [http://localhost/posts/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#create (for 127.0.0.1 at 2011-06-10 10:37:50) [POST]
+  Parameters: {"commit"=>"Save post", "authenticity_token"=>"E12/aBmQYB9/iK70mqQMuKMmqL/OqfbLOB8fN5O6FaA=", "post"=>{"body"=>"test", "title"=>"swimming is good"}}
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPost Load (15.0ms)[0m   [0mSELECT `posts`.id FROM `posts` WHERE (`posts`.`title` = BINARY 'swimming is good') LIMIT 1[0m
+  [4;36;1mPost Create (0.0ms)[0m   [0;1mINSERT INTO `posts` (`updated_at`, `title`, `body`, `created_at`) VALUES('2011-06-10 00:37:50', 'swimming is good', 'test', '2011-06-10 00:37:50')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 47ms (DB: 15) | 302 Found [http://localhost/posts]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:37:50) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:41:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (31.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering posts/show
+Completed in 453ms (View: 422, DB: 31) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20110610001950)
+Migrating to AddAuthorToPost (20110610004321)
+  [4;35;1mSQL (16.0ms)[0m   [0mALTER TABLE `posts` ADD `author` varchar(255) DEFAULT 'Anonymous'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110610004321')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:49:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering posts/show
+Completed in 110ms (View: 94, DB: 16) | 200 OK [http://localhost/posts/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:54:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
+Rendering posts/show
+Completed in 16ms (View: 0, DB: 16) | 200 OK [http://localhost/posts/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:54:50) [GET]
+  Parameters: {"id"=>"sometask"}
+  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Post with ID=sometask):
+  app/controllers/posts_controller.rb:21:in `show'
+
+Rendered rescues/_trace (62.0ms)
+Rendered rescues/_request_and_response (16.0ms)
+Rendering rescues/layout (not_found)
