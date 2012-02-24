@@ -1,0 +1,51 @@
+<div class="asset_container">
+  <div class="drag">
+    <%= a.name %>
+
+    <!-- hidden values -->
+    <input type="hidden" name="template_asset_id[]" value="<%= a.id %>"/>
+    <input type="hidden" name="pos_x[]" value="" />
+    <input type="hidden" name="pos_y[]" value="" />
+    <input type="hidden" name="width[]" value="" />
+    <input type="hidden" name="height[]" value="" />
+    <input type="hidden" name="grid[]" value="" />
+    
+
+    <!-- Styling of the asset -->
+    <div class="styles">
+      Font:
+      <select name="font[]">
+        <option></option>
+        <% @font.each do |f| %>
+          <option><%= f.name %></option>
+        <% end  %>
+      </select>
+      Size:
+      <select name="size[]">
+        <option></option>
+        <% @size.each do |s| %>
+          <option><%= s.name %></option>
+        <% end  %>
+      </select>
+      Color:
+      <select name="color[]">
+        <option></option>
+        <% @color.each do |c| %>
+          <option value="<%= c.value   %>"><%= c.name %></option>
+        <% end  %>
+      </select>
+      Alignment:
+      <select name="align[]">
+        <option></option>
+        <% @align.each do |a| %>
+          <option value="<%= a.value   %>"><%= a.name %></option>
+        <% end  %>
+      </select>
+      
+      <input type="hidden" name="max_rows[]" value="" />
+      <input type="hidden" name="borders[]" value="" />
+    </div>
+    <!-- End Styling -->
+
+  </div><!-- end drag -->
+</div><!-- end asset_container -->

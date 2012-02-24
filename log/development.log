@@ -1,165 +1,1011 @@
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (156.0ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
-  [4;35;1mSQL (94.0ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (16.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+# Logfile created on Fri Feb 24 15:40:53 +1100 2012
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2012-02-24 15:41:42) [GET]
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed in 30ms (View: 4, DB: 4) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-02-24 15:42:05) [GET]
+
+MissingSourceFile (no such file to load -- rghost):
+  app/controllers/document_controller.rb:1
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-02-24 15:43:10) [GET]
+
+MissingSourceFile (no such file to load -- rghost):
+  app/controllers/document_controller.rb:1
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DocumentController#index (for 127.0.0.1 at 2012-02-24 15:46:18) [GET]
+  [4;36;1mPapersize Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: papersizes: SELECT * FROM "papersizes" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: papersizes: SELECT * FROM "papersizes" ):
+  app/controllers/document_controller.rb:190:in `index'
+
+Rendered rescues/_trace (48.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.5ms)[0m   [0;1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime, "author" varchar(255) DEFAULT 'Anonymous') [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20110610004321')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20110610001950')[0m
+
+
+Processing DocumentController#index (for 127.0.0.1 at 2012-02-24 15:47:26) [GET]
+  [4;36;1mPapersize Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: papersizes: SELECT * FROM "papersizes" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: papersizes: SELECT * FROM "papersizes" ):
+  app/controllers/document_controller.rb:190:in `index'
+
+Rendered rescues/_trace (49.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
 Migrating to CreatePosts (20110610001950)
-  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
-  [4;35;1mSQL (15.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110610001950')[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mdescribe `posts`[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `posts`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110610001950')[0m
+Migrating to AddAuthorToPost (20110610004321)
+  [4;35;1mSQL (1.0ms)[0m   [0mALTER TABLE "posts" ADD "author" varchar(255) DEFAULT 'Anonymous'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110610004321')[0m
+Migrating to CreateTemplateAssets (20110627074128)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "template_assets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110627074128')[0m
+Migrating to CreateTemplatePages (20110627084647)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "template_pages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110627084647')[0m
+Migrating to CreateTemplateFields (20110628084038)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "template_fields" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110628084038')[0m
+Migrating to CreateFonts (20110629001340)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "fonts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110629001340')[0m
+Migrating to CreateSizes (20110629001346)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110629001346')[0m
+Migrating to CreateColors (20110629001353)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "colors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110629001353')[0m
+Migrating to CreateRows (20110630014804)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "rows" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110630014804')[0m
+Migrating to CreateAlignments (20110701020244)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "alignments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110701020244')[0m
+Migrating to CreatePapersizes (20110704053840)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "papersizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110704053840')[0m
+Migrating to CreatePeople (20110707030113)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "other_name" varchar(255), "gender_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110707030113')[0m
+Migrating to CreateGenders (20110707030157)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "genders" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110707030157')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("alignments")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("colors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("fonts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("genders")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mPRAGMA index_list("papersizes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("people")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("rows")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mPRAGMA index_list("sizes")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("template_assets")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("template_fields")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("template_pages")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (20.5ms)[0m   [0;1mSHOW FIELDS FROM `alignments`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `alignments`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `alignments`[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mSHOW FIELDS FROM `colors`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mdescribe `colors`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `colors`[0m
+  [4;36;1mSQL (5.5ms)[0m   [0;1mSHOW FIELDS FROM `fonts`[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mdescribe `fonts`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `fonts`[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mSQL (10.5ms)[0m   [0;1mdescribe `papersizes`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `papersizes`[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mdescribe `posts`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mSHOW FIELDS FROM `rows`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `rows`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `rows`[0m
+  [4;36;1mSQL (5.5ms)[0m   [0;1mSHOW FIELDS FROM `sizes`[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mdescribe `sizes`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `sizes`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mSHOW FIELDS FROM `template_assets`[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mdescribe `template_assets`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `template_assets`[0m
+  [4;36;1mSQL (13.5ms)[0m   [0;1mSHOW FIELDS FROM `template_fields`[0m
+  [4;35;1mSQL (13.5ms)[0m   [0mdescribe `template_fields`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `template_fields`[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mSHOW FIELDS FROM `template_pages`[0m
+  [4;36;1mSQL (9.5ms)[0m   [0;1mdescribe `template_pages`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `template_pages`[0m
+  [4;36;1mSQL (9.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mdescribe `templates`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `templates`[0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2011-06-10 10:29:16) [GET]
-
-ActionController::RoutingError (No route matches "/user/signin/" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2011-06-10 10:29:27) [GET]
-
-ActionController::RoutingError (No route matches "/blog/new" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Processing DocumentController#index (for 127.0.0.1 at 2012-02-24 15:52:32) [GET]
+  [4;35;1mPapersize Load (20.0ms)[0m   [0mSELECT * FROM `papersizes` [0m
+Rendering template within layouts/application
+Rendering document/index
+  [4;36;1mPapersize Columns (12.5ms)[0m   [0;1mSHOW FIELDS FROM `papersizes`[0m
+Completed in 53ms (View: 15, DB: 33) | 200 OK [http://localhost/document]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing ApplicationController#index (for 127.0.0.1 at 2011-06-10 10:29:43) [GET]
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 15:52:51) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-12476-efip6g-0>}, "papersize"=>"a4"}
+  [4;36;1mTemplate Load (0.5ms)[0m   [0;1mSELECT * FROM `templates` WHERE (`templates`.`name` = 'QLD SRTO') [0m
+  [4;35;1mTemplate Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `templates`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplate Create (14.5ms)[0m   [0mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('QLD SRTO', 'a4', 'C:/Users/User/Documents/raypro/public/template/QLD SRTO.pdf', 0)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
 
-ActionController::RoutingError (No route matches "/blog/new" with {:method=>:get}):
-  
+TypeError (can't convert nil into String):
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_config.rb:95:in `exists?'
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_config.rb:95:in `config_platform'
+  rghost (0.8.7.6) lib/rghost/gs_alone.rb:13:in `run'
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_engine.rb:84:in `render'
+  rghost (0.8.7.6) lib/rghost/convert.rb:36:in `to'
+  app/controllers/document_controller.rb:260:in `save'
 
-Rendering rescues/layout (not_found)
-  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing ApplicationController#index (for 127.0.0.1 at 2011-06-10 10:30:06) [GET]
-
-ActionController::RoutingError (No route matches "/post/new" with {:method=>:get}):
-  
-
-Rendering rescues/layout (not_found)
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing PostsController#new (for 127.0.0.1 at 2011-06-10 10:30:10) [GET]
-  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
-
-ActionView::MissingTemplate (Missing template posts/new.erb in view path app/views):
-  
-
+Rendered rescues/_trace (75.0ms)
+Rendered rescues/_request_and_response (1.0ms)
 Rendering rescues/layout (internal_server_error)
   [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing PostsController#new (for 127.0.0.1 at 2011-06-10 10:33:36) [GET]
-  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
-Rendering posts/new
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:02:53) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-7264-18ny34f-0>}, "papersize"=>"a4"}
+  [4;35;1mTemplate Load (1.0ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`name` = 'QLD SRTO') [0m
+  [4;36;1mTemplate Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+  [4;35;1mTemplatePage Load (37.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`template_id` = 39) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplate Destroy (16.0ms)[0m   [0mDELETE FROM `templates` WHERE `id` = 39[0m
+  [4;36;1mSQL (11.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplate Create (0.0ms)[0m   [0;1mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('QLD SRTO', 'a4', 'C:/Users/User/Documents/raypro/public/template/QLD SRTO.pdf', 0)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
 
-ActionView::TemplateError (undefined method `posts_path' for #<ActionView::Base:0x35b8b5c>) on line #9 of app/views/posts/new.html.erb:
-6: 
-7: <%= error_messages_for 'post' %>
-8: 
-9: <% form_for @post do |post_form| %>
-10:   <p>
-11:     <strong>Title:</strong>
-12:     <%= post_form.text_field :title %>
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/document_controller.rb:259:in `save'
 
-    app/views/posts/new.html.erb:9
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mAlignment Load (11.0ms)[0m   [0mSELECT * FROM `alignments` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
-Rendered rescues/_trace (109.0ms)
+
+Processing DocumentController#index (for 127.0.0.1 at 2012-02-24 16:12:05) [GET]
+  [4;35;1mPapersize Load (0.5ms)[0m   [0mSELECT * FROM `papersizes` [0m
+Rendering template within layouts/application
+Rendering document/index
+  [4;36;1mPapersize Columns (12.5ms)[0m   [0;1mSHOW FIELDS FROM `papersizes`[0m
+Completed in 106ms (View: 88, DB: 13) | 200 OK [http://localhost/document]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:12:10) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-7996-1q10ab8-0>}, "papersize"=>""}
+  [4;36;1mTemplate Load (0.5ms)[0m   [0;1mSELECT * FROM `templates` WHERE (`templates`.`name` = 'QLD SRTO') [0m
+  [4;35;1mTemplate Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `templates`[0m
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`template_id` = 40) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplate Destroy (43.0ms)[0m   [0;1mDELETE FROM `templates` WHERE `id` = 40[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplate Create (0.5ms)[0m   [0mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('QLD SRTO', 'a4', 'C:/Users/User/Documents/raypro/public/template/QLD SRTO.pdf', 0)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+
+TypeError (can't convert nil into String):
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_config.rb:95:in `exists?'
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_config.rb:95:in `config_platform'
+  rghost (0.8.7.6) lib/rghost/gs_alone.rb:13:in `run'
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_engine.rb:84:in `render'
+  rghost (0.8.7.6) lib/rghost/convert.rb:36:in `to'
+  app/controllers/document_controller.rb:260:in `save'
+
+Rendered rescues/_trace (74.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:12:17) [POST]
+  Parameters: {"commit"=>"Upload", "papersize"=>"a4"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/document_controller.rb:229:in `save'
+
+Rendered rescues/_trace (39.5ms)
 Rendered rescues/_request_and_response (0.0ms)
 Rendering rescues/layout (internal_server_error)
   [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing PostsController#new (for 127.0.0.1 at 2011-06-10 10:35:34) [GET]
-  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
-Rendering posts/new
-Completed in 1390ms (View: 1390, DB: 0) | 200 OK [http://localhost/posts/new]
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-
-
-Processing PostsController#create (for 127.0.0.1 at 2011-06-10 10:37:50) [POST]
-  Parameters: {"commit"=>"Save post", "authenticity_token"=>"E12/aBmQYB9/iK70mqQMuKMmqL/OqfbLOB8fN5O6FaA=", "post"=>{"body"=>"test", "title"=>"swimming is good"}}
-  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:12:28) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-7996-1a0nyjr-0>}, "papersize"=>"a4"}
+  [4;35;1mTemplate Load (0.5ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`name` = 'QLD SRTO') [0m
+  [4;36;1mTemplate Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`template_id` = 41) [0m
   [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
-  [4;35;1mPost Load (15.0ms)[0m   [0mSELECT `posts`.id FROM `posts` WHERE (`posts`.`title` = BINARY 'swimming is good') LIMIT 1[0m
-  [4;36;1mPost Create (0.0ms)[0m   [0;1mINSERT INTO `posts` (`updated_at`, `title`, `body`, `created_at`) VALUES('2011-06-10 00:37:50', 'swimming is good', 'test', '2011-06-10 00:37:50')[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
-Redirected to http://localhost:3000/posts/1
-Completed in 47ms (DB: 15) | 302 Found [http://localhost/posts]
+  [4;35;1mTemplate Destroy (40.0ms)[0m   [0mDELETE FROM `templates` WHERE `id` = 41[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplate Create (0.5ms)[0m   [0;1mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('QLD SRTO', 'a4', 'C:/Users/User/Documents/raypro/public/template/QLD SRTO.pdf', 0)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+
+TypeError (can't convert nil into String):
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_config.rb:95:in `exists?'
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_config.rb:95:in `config_platform'
+  rghost (0.8.7.6) lib/rghost/gs_alone.rb:13:in `run'
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_engine.rb:84:in `render'
+  rghost (0.8.7.6) lib/rghost/convert.rb:36:in `to'
+  app/controllers/document_controller.rb:260:in `save'
+
+Rendered rescues/_trace (76.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
   [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:37:50) [GET]
-  Parameters: {"id"=>"1"}
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:12:57) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-7996-1szkxqd-0>}, "papersize"=>"a4"}
+  [4;35;1mTemplate Load (0.5ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`name` = 'QLD SRTO') [0m
+  [4;36;1mTemplate Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`template_id` = 42) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplate Destroy (11.0ms)[0m   [0mDELETE FROM `templates` WHERE `id` = 42[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplate Create (0.0ms)[0m   [0;1mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('QLD SRTO', 'a4', 'C:/Users/User/Documents/raypro/public/template/QLD SRTO.pdf', 0)[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
 
-ActionController::UnknownAction (No action responded to show. Actions: create and new):
-  
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/document_controller.rb:265:in `save'
 
-Rendering rescues/layout (not_found)
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:14:50) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-7996-u64chq-0>}, "papersize"=>"a4"}
+  [4;35;1mTemplate Load (0.5ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`name` = 'QLD SRTO') [0m
+  [4;36;1mTemplate Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`template_id` = 43) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplate Destroy (31.0ms)[0m   [0mDELETE FROM `templates` WHERE `id` = 43[0m
+  [4;36;1mSQL (11.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplate Create (0.5ms)[0m   [0;1mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('QLD SRTO', 'a4', 'C:/Users/User/Documents/raypro/public/template/QLD SRTO.pdf', 0)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/document/design
+Completed in 681ms (DB: 56) | 302 Found [http://localhost/document/save]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#design (for 127.0.0.1 at 2012-02-24 16:15:00) [GET]
+  [4;35;1mTemplateAsset Load (0.5ms)[0m   [0mSELECT * FROM `template_assets` [0m
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mColor Load (0.5ms)[0m   [0mSELECT * FROM `colors` [0m
+  [4;36;1mFont Load (0.5ms)[0m   [0;1mSELECT * FROM `fonts` [0m
+  [4;35;1mSize Load (8.5ms)[0m   [0mSELECT * FROM `sizes` [0m
+  [4;36;1mRow Load (0.5ms)[0m   [0;1mSELECT * FROM `rows` [0m
+  [4;35;1mAlignment Load (0.0ms)[0m   [0mSELECT * FROM `alignments` [0m
+Rendering template within layouts/application
+Rendering document/design
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplateAsset Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `template_assets`[0m
+  [4;36;1mFont Columns (5.5ms)[0m   [0;1mSHOW FIELDS FROM `fonts`[0m
+  [4;35;1mSize Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `sizes`[0m
+  [4;36;1mColor Columns (6.5ms)[0m   [0;1mSHOW FIELDS FROM `colors`[0m
+  [4;35;1mAlignment Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `alignments`[0m
+Rendered document/_static (29.0ms)
+Rendered document/_static (0.0ms)
+Rendered document/_static (0.0ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.0ms)
+  [4;36;1mRow Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `rows`[0m
+Rendered document/_dynamic (8.5ms)
+Rendered document/_static (0.0ms)
+Completed in 170ms (View: 28, DB: 57) | 200 OK [http://localhost/document/design]
   [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:41:32) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mPost Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
-  [4;35;1mPost Load (31.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
-Rendering posts/show
-Completed in 453ms (View: 422, DB: 31) | 200 OK [http://localhost/posts/1]
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-Migrating to CreatePosts (20110610001950)
-Migrating to AddAuthorToPost (20110610004321)
-  [4;35;1mSQL (16.0ms)[0m   [0mALTER TABLE `posts` ADD `author` varchar(255) DEFAULT 'Anonymous'[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110610004321')[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
-  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `posts`[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `posts`[0m
-  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:15:06) [GET]
+  Parameters: {"id"=>"70"}
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '70') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.0ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 35) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.5ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (48.0ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 90ms (View: 7, DB: 71) | 200 OK [http://localhost/document/choose/70]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:49:15) [GET]
-  Parameters: {"id"=>"1"}
-  [4;35;1mPost Columns (16.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
-  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
-Rendering posts/show
-Completed in 110ms (View: 94, DB: 16) | 200 OK [http://localhost/posts/1]
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:15:11) [GET]
+  Parameters: {"id"=>"64"}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '64') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.0ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 33) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.5ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (9.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 49ms (View: 4, DB: 33) | 200 OK [http://localhost/document/choose/64]
   [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:54:42) [GET]
-  Parameters: {"id"=>"1"}
-  [4;36;1mPost Columns (16.0ms)[0m   [0;1mSHOW FIELDS FROM `posts`[0m
-  [4;35;1mPost Load (0.0ms)[0m   [0mSELECT * FROM `posts` WHERE (`posts`.`id` = 1) [0m
-Rendering posts/show
-Completed in 16ms (View: 0, DB: 16) | 200 OK [http://localhost/posts/1]
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:15:13) [GET]
+  Parameters: {"id"=>"69"}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '69') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.0ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 34) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.0ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 48ms (View: 3, DB: 32) | 200 OK [http://localhost/document/choose/69]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:16:13) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-7996-1gc7w81-0>}, "papersize"=>"a4"}
+  [4;36;1mTemplate Load (0.5ms)[0m   [0;1mSELECT * FROM `templates` WHERE (`templates`.`name` = 'QLD_SRTO') [0m
+  [4;35;1mTemplate Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `templates`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplate Create (33.5ms)[0m   [0mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('QLD_SRTO', 'a4', 'C:/Users/User/Documents/raypro/public/template/QLD_SRTO.pdf', 0)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+
+NoMethodError (undefined method `get_size' for #<ImageSize:0x6c690c0 @height=842, @width=595, @format=:png>):
+  app/controllers/document_controller.rb:269:in `save'
+  app/controllers/document_controller.rb:268:in `open'
+  app/controllers/document_controller.rb:268:in `save'
+  app/controllers/document_controller.rb:266:in `each'
+  app/controllers/document_controller.rb:266:in `save'
+
+Rendered rescues/_trace (73.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:18:18) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-7996-vp9hrk-0>}, "papersize"=>"a4"}
+  [4;36;1mTemplate Load (0.5ms)[0m   [0;1mSELECT * FROM `templates` WHERE (`templates`.`name` = 'QLD_SRTO') [0m
+  [4;35;1mTemplate Columns (10.5ms)[0m   [0mSHOW FIELDS FROM `templates`[0m
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`template_id` = 45) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplate Destroy (52.0ms)[0m   [0;1mDELETE FROM `templates` WHERE `id` = 45[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplate Create (6.5ms)[0m   [0mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('QLD_SRTO', 'a4', 'C:/Users/User/Documents/raypro/public/template/QLD_SRTO.pdf', 0)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTemplatePage Columns (10.5ms)[0m   [0mSHOW FIELDS FROM `template_pages`[0m
+
+NameError (undefined local variable or method `image_size' for #<DocumentController:0x6e164b0>):
+  app/controllers/document_controller.rb:273:in `save'
+  app/controllers/document_controller.rb:262:in `each'
+  app/controllers/document_controller.rb:262:in `save'
+
+Rendered rescues/_trace (39.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:19:11) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-7996-15ihm6k-0>}, "papersize"=>"a4"}
+  [4;35;1mTemplate Load (0.5ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`name` = 'QLD_SRTO') [0m
+  [4;36;1mTemplate Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`template_id` = 46) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplate Destroy (32.0ms)[0m   [0mDELETE FROM `templates` WHERE `id` = 46[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplate Create (0.5ms)[0m   [0;1mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('QLD_SRTO', 'a4', 'C:/Users/User/Documents/raypro/public/template/QLD_SRTO.pdf', 0)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTemplatePage Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplatePage Create (1.5ms)[0m   [0;1mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('QLD_SRTO_0001.png', 47, 'C:/Users/User/Documents/raypro/public/template/QLD_SRTO_0001.eps', 'C:/Users/User/Documents/raypro/public/template/QLD_SRTO_0001.png', 842, 595)[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/document/design
+Completed in 811ms (DB: 61) | 302 Found [http://localhost/document/save]
   [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing PostsController#show (for 127.0.0.1 at 2011-06-10 10:54:50) [GET]
-  Parameters: {"id"=>"sometask"}
-  [4;35;1mPost Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `posts`[0m
-  [4;36;1mPost Load (0.0ms)[0m   [0;1mSELECT * FROM `posts` WHERE (`posts`.`id` = 0) [0m
+Processing DocumentController#design (for 127.0.0.1 at 2012-02-24 16:19:12) [GET]
+  [4;35;1mTemplateAsset Load (0.0ms)[0m   [0mSELECT * FROM `template_assets` [0m
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mColor Load (0.0ms)[0m   [0mSELECT * FROM `colors` [0m
+  [4;36;1mFont Load (0.5ms)[0m   [0;1mSELECT * FROM `fonts` [0m
+  [4;35;1mSize Load (0.0ms)[0m   [0mSELECT * FROM `sizes` [0m
+  [4;36;1mRow Load (0.0ms)[0m   [0;1mSELECT * FROM `rows` [0m
+  [4;35;1mAlignment Load (0.0ms)[0m   [0mSELECT * FROM `alignments` [0m
+Rendering template within layouts/application
+Rendering document/design
+  [4;36;1mTemplatePage Columns (9.5ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplateAsset Columns (5.5ms)[0m   [0mSHOW FIELDS FROM `template_assets`[0m
+  [4;36;1mFont Columns (5.5ms)[0m   [0;1mSHOW FIELDS FROM `fonts`[0m
+  [4;35;1mSize Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `sizes`[0m
+  [4;36;1mColor Columns (6.5ms)[0m   [0;1mSHOW FIELDS FROM `colors`[0m
+  [4;35;1mAlignment Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `alignments`[0m
+Rendered document/_static (27.0ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.0ms)
+  [4;36;1mRow Columns (5.5ms)[0m   [0;1mSHOW FIELDS FROM `rows`[0m
+Rendered document/_dynamic (6.5ms)
+Rendered document/_static (0.0ms)
+Completed in 83ms (View: 15, DB: 45) | 200 OK [http://localhost/document/design]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
-ActiveRecord::RecordNotFound (Couldn't find Post with ID=sometask):
-  app/controllers/posts_controller.rb:21:in `show'
 
-Rendered rescues/_trace (62.0ms)
-Rendered rescues/_request_and_response (16.0ms)
-Rendering rescues/layout (not_found)
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:19:16) [GET]
+  Parameters: {"id"=>"81"}
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '81') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.0ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 47) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.5ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 48ms (View: 4, DB: 32) | 200 OK [http://localhost/document/choose/81]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#index (for 127.0.0.1 at 2012-02-24 16:29:43) [GET]
+  [4;35;1mPapersize Load (0.5ms)[0m   [0mSELECT * FROM `papersizes` [0m
+Rendering template within layouts/application
+Rendering document/index
+  [4;36;1mPapersize Columns (11.5ms)[0m   [0;1mSHOW FIELDS FROM `papersizes`[0m
+Completed in 33ms (View: 16, DB: 12) | 200 OK [http://localhost/document]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:29:49) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-9660-8e79r3-0>}, "papersize"=>"a4"}
+  [4;36;1mTemplate Load (0.5ms)[0m   [0;1mSELECT * FROM `templates` WHERE (`templates`.`name` = 'SAxSignUp') [0m
+  [4;35;1mTemplate Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `templates`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplate Create (52.0ms)[0m   [0mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('SAxSignUp', 'a4', 'C:/Users/User/Documents/raypro/public/template/SAxSignUp.pdf', 0)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTemplatePage Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `template_pages`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplatePage Create (0.5ms)[0m   [0mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('SAxSignUp_0001.png', 48, 'C:/Users/User/Documents/raypro/public/template/SAxSignUp_0001.eps', 'C:/Users/User/Documents/raypro/public/template/SAxSignUp_0001.png', 842, 595)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3001/document/design
+Completed in 1203ms (DB: 79) | 302 Found [http://localhost/document/save]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#design (for 127.0.0.1 at 2012-02-24 16:29:50) [GET]
+  [4;36;1mTemplateAsset Load (0.5ms)[0m   [0;1mSELECT * FROM `template_assets` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` [0m
+  [4;36;1mColor Load (0.5ms)[0m   [0;1mSELECT * FROM `colors` [0m
+  [4;35;1mFont Load (0.0ms)[0m   [0mSELECT * FROM `fonts` [0m
+  [4;36;1mSize Load (0.0ms)[0m   [0;1mSELECT * FROM `sizes` [0m
+  [4;35;1mRow Load (0.5ms)[0m   [0mSELECT * FROM `rows` [0m
+  [4;36;1mAlignment Load (0.0ms)[0m   [0;1mSELECT * FROM `alignments` [0m
+Rendering template within layouts/application
+Rendering document/design
+  [4;35;1mTemplatePage Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `template_pages`[0m
+  [4;36;1mTemplateAsset Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `template_assets`[0m
+  [4;35;1mFont Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `fonts`[0m
+  [4;36;1mSize Columns (5.5ms)[0m   [0;1mSHOW FIELDS FROM `sizes`[0m
+  [4;35;1mColor Columns (6.5ms)[0m   [0mSHOW FIELDS FROM `colors`[0m
+  [4;36;1mAlignment Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `alignments`[0m
+Rendered document/_static (28.0ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.0ms)
+Rendered document/_static (0.0ms)
+Rendered document/_static (0.0ms)
+  [4;35;1mRow Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `rows`[0m
+Rendered document/_dynamic (9.0ms)
+Rendered document/_static (0.0ms)
+Completed in 127ms (View: 23, DB: 48) | 200 OK [http://localhost/document/design]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:30:54) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-9660-pnha1e-0>}, "papersize"=>"a4"}
+  [4;35;1mTemplate Load (0.0ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`name` = 'SA_SignUp') [0m
+  [4;36;1mTemplate Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplate Create (39.5ms)[0m   [0;1mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('SA_SignUp', 'a4', 'C:/Users/User/Documents/raypro/public/template/SA_SignUp.pdf', 0)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTemplatePage Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplatePage Create (0.5ms)[0m   [0;1mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('SA_SignUp_0001.png', 49, 'C:/Users/User/Documents/raypro/public/template/SA_SignUp_0001.eps', 'C:/Users/User/Documents/raypro/public/template/SA_SignUp_0001.png', 842, 595)[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3001/document/design
+Completed in 1175ms (DB: 68) | 302 Found [http://localhost/document/save]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#design (for 127.0.0.1 at 2012-02-24 16:30:56) [GET]
+  [4;35;1mTemplateAsset Load (0.5ms)[0m   [0mSELECT * FROM `template_assets` [0m
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mColor Load (0.5ms)[0m   [0mSELECT * FROM `colors` [0m
+  [4;36;1mFont Load (0.0ms)[0m   [0;1mSELECT * FROM `fonts` [0m
+  [4;35;1mSize Load (0.5ms)[0m   [0mSELECT * FROM `sizes` [0m
+  [4;36;1mRow Load (0.0ms)[0m   [0;1mSELECT * FROM `rows` [0m
+  [4;35;1mAlignment Load (0.5ms)[0m   [0mSELECT * FROM `alignments` [0m
+Rendering template within layouts/application
+Rendering document/design
+  [4;36;1mTemplatePage Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplateAsset Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `template_assets`[0m
+  [4;36;1mFont Columns (5.5ms)[0m   [0;1mSHOW FIELDS FROM `fonts`[0m
+  [4;35;1mSize Columns (5.5ms)[0m   [0mSHOW FIELDS FROM `sizes`[0m
+  [4;36;1mColor Columns (49.0ms)[0m   [0;1mSHOW FIELDS FROM `colors`[0m
+  [4;35;1mAlignment Columns (6.5ms)[0m   [0mSHOW FIELDS FROM `alignments`[0m
+Rendered document/_static (71.0ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.5ms)
+  [4;36;1mRow Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `rows`[0m
+Rendered document/_dynamic (7.0ms)
+Rendered document/_static (0.5ms)
+Completed in 128ms (View: 15, DB: 91) | 200 OK [http://localhost/document/design]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:31:02) [GET]
+  Parameters: {"id"=>"83"}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.5ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 49) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.5ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.5ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (9.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 55ms (View: 7, DB: 34) | 200 OK [http://localhost/document/choose/83]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:31:06) [GET]
+  Parameters: {"id"=>"82"}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '82') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.0ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 48) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.5ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (9.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 49ms (View: 3, DB: 32) | 200 OK [http://localhost/document/choose/82]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:31:08) [GET]
+  Parameters: {"id"=>"83"}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.0ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 49) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.5ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 49ms (View: 4, DB: 33) | 200 OK [http://localhost/document/choose/83]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#generate (for 127.0.0.1 at 2012-02-24 16:31:58) [POST]
+  Parameters: {"paper_size"=>"a4", "size"=>[""], "pos_x"=>["42"], "pos_y"=>["134"], "page_id"=>"83", "color"=>[""], "landscape"=>"0", "template_asset_id"=>["1"], "font"=>["AvantGarde-Book"], "height"=>["15"], "align"=>[""], "borders"=>[""], "max_rows"=>[""], "width"=>["433"], "grid"=>[""]}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.5ms)[0m   [0mSELECT * FROM `template_fields` WHERE (template_page_id = 83) [0m
+  [4;36;1mTemplatePage Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplateField Columns (13.5ms)[0m   [0mSHOW FIELDS FROM `template_fields`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplateField Create (0.0ms)[0m   [0mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 42, 134, 25, 754, '', 1, 'AvantGarde-Book', 10, NULL, '', NULL, 83, 258, '')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;36;1mTemplateField Load (0.0ms)[0m   [0;1mSELECT * FROM `template_fields` WHERE (`template_fields`.`template_page_id` = 83) [0m
+  [4;35;1mTemplateAsset Columns (6.5ms)[0m   [0mSHOW FIELDS FROM `template_assets`[0m
+  [4;36;1mTemplateAsset Load (0.0ms)[0m   [0;1mSELECT * FROM `template_assets` WHERE (`template_assets`.`id` = 1) [0m
+  [4;35;1mTemplateField Load Including Associations (0.0ms)[0m   [0mSELECT `template_fields`.`id` AS t0_r0, `template_fields`.`template_page_id` AS t0_r1, `template_fields`.`template_asset_id` AS t0_r2, `template_fields`.`pos_x` AS t0_r3, `template_fields`.`pos_y` AS t0_r4, `template_fields`.`eps_x` AS t0_r5, `template_fields`.`eps_y` AS t0_r6, `template_fields`.`width` AS t0_r7, `template_fields`.`height` AS t0_r8, `template_fields`.`font` AS t0_r9, `template_fields`.`color` AS t0_r10, `template_fields`.`size` AS t0_r11, `template_fields`.`grid` AS t0_r12, `template_fields`.`num_rows` AS t0_r13, `template_fields`.`borders` AS t0_r14, `template_fields`.`align` AS t0_r15, `template_assets`.`id` AS t1_r0, `template_assets`.`name` AS t1_r1, `template_assets`.`content` AS t1_r2, `template_assets`.`asset_type_id` AS t1_r3, `template_assets`.`column` AS t1_r4 FROM `template_fields` LEFT OUTER JOIN `template_assets` ON `template_assets`.id = `template_fields`.template_asset_id WHERE (`template_assets`.`asset_type_id` = 3 AND `template_fields`.`template_page_id` = 83) LIMIT 1[0m
+Rendering document/generate
+Completed in 707ms (View: 3, DB: 34) | 200 OK [http://localhost/document/generate]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#design (for 127.0.0.1 at 2012-02-24 16:34:47) [GET]
+  [4;35;1mTemplateAsset Load (0.5ms)[0m   [0mSELECT * FROM `template_assets` [0m
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mColor Load (0.5ms)[0m   [0mSELECT * FROM `colors` [0m
+  [4;36;1mFont Load (0.0ms)[0m   [0;1mSELECT * FROM `fonts` [0m
+  [4;35;1mSize Load (0.0ms)[0m   [0mSELECT * FROM `sizes` [0m
+  [4;36;1mRow Load (0.0ms)[0m   [0;1mSELECT * FROM `rows` [0m
+  [4;35;1mAlignment Load (0.5ms)[0m   [0mSELECT * FROM `alignments` [0m
+Rendering template within layouts/application
+Rendering document/design
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplateAsset Columns (6.5ms)[0m   [0mSHOW FIELDS FROM `template_assets`[0m
+  [4;36;1mFont Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `fonts`[0m
+  [4;35;1mSize Columns (5.5ms)[0m   [0mSHOW FIELDS FROM `sizes`[0m
+  [4;36;1mColor Columns (6.5ms)[0m   [0;1mSHOW FIELDS FROM `colors`[0m
+  [4;35;1mAlignment Columns (6.5ms)[0m   [0mSHOW FIELDS FROM `alignments`[0m
+Rendered document/_static (27.0ms)
+Rendered document/_static (0.0ms)
+Rendered document/_static (0.0ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.0ms)
+  [4;36;1mRow Columns (5.5ms)[0m   [0;1mSHOW FIELDS FROM `rows`[0m
+Rendered document/_dynamic (6.5ms)
+Rendered document/_static (0.0ms)
+Completed in 84ms (View: 12, DB: 49) | 200 OK [http://localhost/document/design]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:34:51) [GET]
+  Parameters: {"id"=>"83"}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.0ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 49) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.5ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.5ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (9.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 48ms (View: 3, DB: 33) | 200 OK [http://localhost/document/choose/83]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:35:42) [GET]
+  Parameters: {"id"=>"70"}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '70') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.5ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 35) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.0ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.5ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (9.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 50ms (View: 4, DB: 33) | 200 OK [http://localhost/document/choose/70]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#generate (for 127.0.0.1 at 2012-02-24 16:35:42) [POST]
+  Parameters: {"paper_size"=>"a4", "size"=>["", "", "", "", "", ""], "pos_x"=>["42", "-151", "45", "46", "-159", "522"], "pos_y"=>["133", "180", "183", "234", "188", "234"], "page_id"=>"70", "color"=>["", "", "", "", "", ""], "landscape"=>"0", "template_asset_id"=>["1", "4", "2", "3", "5", "5"], "font"=>["", "", "", "", "", ""], "height"=>["17", "15", "16", "15", "15", "18"], "align"=>["", "", "", "", "", ""], "borders"=>["", "", "", "", "", ""], "max_rows"=>["", "", "", "", "", ""], "width"=>["432", "150", "428", "428", "150", "438"], "grid"=>["", "", "", "", "", ""]}
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '70') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.0ms)[0m   [0mSELECT * FROM `template_fields` WHERE (template_page_id = 70) [0m
+  [4;36;1mTemplatePage Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplateField Columns (14.0ms)[0m   [0mSHOW FIELDS FROM `template_fields`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplateField Create (38.0ms)[0m   [0mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 42, 133, 35, 475, '', 1, '', 15, NULL, '', NULL, 70, 364, '')[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplateField Create (19.5ms)[0m   [0;1mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', -151, 180, -127, 436, '', 4, '', 13, NULL, '', NULL, 70, 126, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplateField Create (0.0ms)[0m   [0mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 45, 183, 38, 433, '', 2, '', 14, NULL, '', NULL, 70, 360, '')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplateField Create (1.5ms)[0m   [0;1mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 46, 234, 39, 390, '', 3, '', 13, NULL, '', NULL, 70, 360, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplateField Create (0.5ms)[0m   [0mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', -159, 188, -134, 429, '', 5, '', 13, NULL, '', NULL, 70, 126, '')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplateField Create (0.5ms)[0m   [0;1mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 522, 234, 440, 390, '', 5, '', 16, NULL, '', NULL, 70, 369, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '70') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.5ms)[0m   [0mSELECT * FROM `template_fields` WHERE (`template_fields`.`template_page_id` = 70) [0m
+  [4;36;1mTemplateAsset Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `template_assets`[0m
+  [4;35;1mTemplateAsset Load (0.5ms)[0m   [0mSELECT * FROM `template_assets` WHERE (`template_assets`.`id` IN (1,2,3,4,5)) [0m
+  [4;36;1mTemplateField Load Including Associations (0.0ms)[0m   [0;1mSELECT `template_fields`.`id` AS t0_r0, `template_fields`.`template_page_id` AS t0_r1, `template_fields`.`template_asset_id` AS t0_r2, `template_fields`.`pos_x` AS t0_r3, `template_fields`.`pos_y` AS t0_r4, `template_fields`.`eps_x` AS t0_r5, `template_fields`.`eps_y` AS t0_r6, `template_fields`.`width` AS t0_r7, `template_fields`.`height` AS t0_r8, `template_fields`.`font` AS t0_r9, `template_fields`.`color` AS t0_r10, `template_fields`.`size` AS t0_r11, `template_fields`.`grid` AS t0_r12, `template_fields`.`num_rows` AS t0_r13, `template_fields`.`borders` AS t0_r14, `template_fields`.`align` AS t0_r15, `template_assets`.`id` AS t1_r0, `template_assets`.`name` AS t1_r1, `template_assets`.`content` AS t1_r2, `template_assets`.`asset_type_id` AS t1_r3, `template_assets`.`column` AS t1_r4 FROM `template_fields` LEFT OUTER JOIN `template_assets` ON `template_assets`.id = `template_fields`.template_asset_id WHERE (`template_assets`.`asset_type_id` = 3 AND `template_fields`.`template_page_id` = 70) LIMIT 1[0m
+
+Errno::ENOENT (No such file or directory - c:/blog/public/template/training_plan_0001.eps.pdf.rgin):
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_engine.rb:62:in `initialize'
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_engine.rb:62:in `open'
+  rghost (0.8.7.6) lib/rghost/ruby_ghost_engine.rb:62:in `render'
+  rghost (0.8.7.6) lib/rghost/document.rb:237:in `render'
+  app/controllers/document_controller.rb:177:in `generate'
+
+Rendered rescues/_trace (74.5ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:35:47) [GET]
+  Parameters: {"id"=>"83"}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;36;1mTemplatePage Columns (10.5ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplate Load (0.5ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`id` = 49) LIMIT 1[0m
+  [4;36;1mPapersize Load (0.5ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;35;1mPapersize Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+  [4;36;1mTemplate Columns (9.5ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+Completed in 48ms (View: 4, DB: 33) | 200 OK [http://localhost/document/choose/83]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#generate (for 127.0.0.1 at 2012-02-24 16:36:22) [POST]
+  Parameters: {"paper_size"=>"a4", "size"=>["", "", "", ""], "pos_x"=>["46", "43", "45", "524"], "pos_y"=>["134", "181", "232", "234"], "page_id"=>"83", "color"=>["", "", "", ""], "landscape"=>"0", "template_asset_id"=>["1", "2", "3", "4"], "font"=>["", "", "", ""], "height"=>["15", "15", "15", "15"], "align"=>["", "", "", ""], "borders"=>["", "", "", ""], "max_rows"=>["", "", "", ""], "width"=>["150", "150", "150", "150"], "grid"=>["", "", "", ""]}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.0ms)[0m   [0mSELECT * FROM `template_fields` WHERE (template_page_id = 83) [0m
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplateField Columns (14.0ms)[0m   [0mSHOW FIELDS FROM `template_fields`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplateField Create (0.5ms)[0m   [0mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 46, 134, 27, 754, '', 1, '', 10, NULL, '', NULL, 83, 89, '')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplateField Create (37.0ms)[0m   [0;1mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 43, 181, 26, 726, '', 2, '', 10, NULL, '', NULL, 83, 89, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplateField Create (0.0ms)[0m   [0mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 45, 232, 27, 696, '', 3, '', 10, NULL, '', NULL, 83, 89, '')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplateField Create (14.0ms)[0m   [0;1mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 524, 234, 312, 695, '', 4, '', 10, NULL, '', NULL, 83, 89, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.5ms)[0m   [0mSELECT * FROM `template_fields` WHERE (`template_fields`.`template_page_id` = 83) [0m
+  [4;36;1mTemplateAsset Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `template_assets`[0m
+  [4;35;1mTemplateAsset Load (0.0ms)[0m   [0mSELECT * FROM `template_assets` WHERE (`template_assets`.`id` IN (1,2,3,4)) [0m
+  [4;36;1mTemplateField Load Including Associations (0.0ms)[0m   [0;1mSELECT `template_fields`.`id` AS t0_r0, `template_fields`.`template_page_id` AS t0_r1, `template_fields`.`template_asset_id` AS t0_r2, `template_fields`.`pos_x` AS t0_r3, `template_fields`.`pos_y` AS t0_r4, `template_fields`.`eps_x` AS t0_r5, `template_fields`.`eps_y` AS t0_r6, `template_fields`.`width` AS t0_r7, `template_fields`.`height` AS t0_r8, `template_fields`.`font` AS t0_r9, `template_fields`.`color` AS t0_r10, `template_fields`.`size` AS t0_r11, `template_fields`.`grid` AS t0_r12, `template_fields`.`num_rows` AS t0_r13, `template_fields`.`borders` AS t0_r14, `template_fields`.`align` AS t0_r15, `template_assets`.`id` AS t1_r0, `template_assets`.`name` AS t1_r1, `template_assets`.`content` AS t1_r2, `template_assets`.`asset_type_id` AS t1_r3, `template_assets`.`column` AS t1_r4 FROM `template_fields` LEFT OUTER JOIN `template_assets` ON `template_assets`.id = `template_fields`.template_asset_id WHERE (`template_assets`.`asset_type_id` = 3 AND `template_fields`.`template_page_id` = 83) LIMIT 1[0m
+Rendering document/generate
+Completed in 728ms (View: 1, DB: 91) | 200 OK [http://localhost/document/generate]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#generate (for 127.0.0.1 at 2012-02-24 16:37:58) [POST]
+  Parameters: {"paper_size"=>"a4", "size"=>["", "", "", ""], "pos_x"=>["46", "43", "45", "524"], "pos_y"=>["134", "181", "232", "234"], "page_id"=>"83", "color"=>["", "", "", ""], "landscape"=>"0", "template_asset_id"=>["1", "2", "3", "4"], "font"=>["", "", "", ""], "height"=>["15", "15", "15", "15"], "align"=>["", "", "", ""], "borders"=>["", "", "", ""], "max_rows"=>["", "", "", ""], "width"=>["150", "150", "150", "150"], "grid"=>["", "", "", ""]}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.5ms)[0m   [0mSELECT * FROM `template_fields` WHERE (template_page_id = 83) [0m
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mTemplateField Columns (14.0ms)[0m   [0mSHOW FIELDS FROM `template_fields`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplateField Create (36.5ms)[0m   [0mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 46, 134, 27, 754, '', 1, '', 10, NULL, '', NULL, 83, 89, '')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplateField Create (7.0ms)[0m   [0;1mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 43, 181, 26, 726, '', 2, '', 10, NULL, '', NULL, 83, 89, '')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplateField Create (0.5ms)[0m   [0mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 45, 232, 27, 696, '', 3, '', 10, NULL, '', NULL, 83, 89, '')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplateField Create (13.5ms)[0m   [0;1mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 524, 234, 312, 695, '', 4, '', 10, NULL, '', NULL, 83, 89, '')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '83') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.5ms)[0m   [0mSELECT * FROM `template_fields` WHERE (`template_fields`.`template_page_id` = 83) [0m
+  [4;36;1mTemplateAsset Columns (6.5ms)[0m   [0;1mSHOW FIELDS FROM `template_assets`[0m
+  [4;35;1mTemplateAsset Load (0.0ms)[0m   [0mSELECT * FROM `template_assets` WHERE (`template_assets`.`id` IN (1,2,3,4)) [0m
+  [4;36;1mTemplateField Load Including Associations (0.5ms)[0m   [0;1mSELECT `template_fields`.`id` AS t0_r0, `template_fields`.`template_page_id` AS t0_r1, `template_fields`.`template_asset_id` AS t0_r2, `template_fields`.`pos_x` AS t0_r3, `template_fields`.`pos_y` AS t0_r4, `template_fields`.`eps_x` AS t0_r5, `template_fields`.`eps_y` AS t0_r6, `template_fields`.`width` AS t0_r7, `template_fields`.`height` AS t0_r8, `template_fields`.`font` AS t0_r9, `template_fields`.`color` AS t0_r10, `template_fields`.`size` AS t0_r11, `template_fields`.`grid` AS t0_r12, `template_fields`.`num_rows` AS t0_r13, `template_fields`.`borders` AS t0_r14, `template_fields`.`align` AS t0_r15, `template_assets`.`id` AS t1_r0, `template_assets`.`name` AS t1_r1, `template_assets`.`content` AS t1_r2, `template_assets`.`asset_type_id` AS t1_r3, `template_assets`.`column` AS t1_r4 FROM `template_fields` LEFT OUTER JOIN `template_assets` ON `template_assets`.id = `template_fields`.template_asset_id WHERE (`template_assets`.`asset_type_id` = 3 AND `template_fields`.`template_page_id` = 83) LIMIT 1[0m
+Rendering document/generate
+Completed in 734ms (View: 1, DB: 96) | 200 OK [http://localhost/document/generate]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#index (for 127.0.0.1 at 2012-02-24 16:41:50) [GET]
+  [4;36;1mPapersize Load (0.0ms)[0m   [0;1mSELECT * FROM `papersizes` [0m
+Rendering template within layouts/application
+Rendering document/index
+  [4;35;1mPapersize Columns (12.5ms)[0m   [0mSHOW FIELDS FROM `papersizes`[0m
+Completed in 56ms (View: 38, DB: 13) | 200 OK [http://localhost/document]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#save (for 127.0.0.1 at 2012-02-24 16:42:14) [POST]
+  Parameters: {"commit"=>"Upload", "upload"=>{"file"=>#<File:C:/Users/User/AppData/Local/Temp/RackMultipart20120224-9660-6skzia-0>}, "papersize"=>"a4"}
+  [4;35;1mTemplate Load (0.5ms)[0m   [0mSELECT * FROM `templates` WHERE (`templates`.`name` = 'training-contract') [0m
+  [4;36;1mTemplate Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `templates`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplate Create (17.5ms)[0m   [0;1mINSERT INTO `templates` (`name`, `paper_size`, `location`, `landscape`) VALUES('training-contract', 'a4', 'C:/Users/User/Documents/raypro/public/template/training-contract.pdf', 0)[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTemplatePage Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplatePage Create (0.0ms)[0m   [0;1mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('training-contract_0001.png', 50, 'C:/Users/User/Documents/raypro/public/template/training-contract_0001.eps', 'C:/Users/User/Documents/raypro/public/template/training-contract_0001.png', 842, 595)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplatePage Create (0.0ms)[0m   [0mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('training-contract_0002.png', 50, 'C:/Users/User/Documents/raypro/public/template/training-contract_0002.eps', 'C:/Users/User/Documents/raypro/public/template/training-contract_0002.png', 842, 595)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplatePage Create (0.0ms)[0m   [0;1mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('training-contract_0003.png', 50, 'C:/Users/User/Documents/raypro/public/template/training-contract_0003.eps', 'C:/Users/User/Documents/raypro/public/template/training-contract_0003.png', 842, 595)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplatePage Create (8.5ms)[0m   [0mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('training-contract_0004.png', 50, 'C:/Users/User/Documents/raypro/public/template/training-contract_0004.eps', 'C:/Users/User/Documents/raypro/public/template/training-contract_0004.png', 842, 595)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplatePage Create (0.0ms)[0m   [0;1mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('training-contract_0005.png', 50, 'C:/Users/User/Documents/raypro/public/template/training-contract_0005.eps', 'C:/Users/User/Documents/raypro/public/template/training-contract_0005.png', 842, 595)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplatePage Create (0.0ms)[0m   [0mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('training-contract_0006.png', 50, 'C:/Users/User/Documents/raypro/public/template/training-contract_0006.eps', 'C:/Users/User/Documents/raypro/public/template/training-contract_0006.png', 842, 595)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplatePage Create (0.0ms)[0m   [0;1mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('training-contract_0007.png', 50, 'C:/Users/User/Documents/raypro/public/template/training-contract_0007.eps', 'C:/Users/User/Documents/raypro/public/template/training-contract_0007.png', 842, 595)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplatePage Create (0.0ms)[0m   [0mINSERT INTO `template_pages` (`name`, `template_id`, `eps_location`, `png_location`, `height`, `width`) VALUES('training-contract_0008.png', 50, 'C:/Users/User/Documents/raypro/public/template/training-contract_0008.eps', 'C:/Users/User/Documents/raypro/public/template/training-contract_0008.png', 842, 595)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3001/document/design
+Completed in 1963ms (DB: 58) | 302 Found [http://localhost/document/save]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#design (for 127.0.0.1 at 2012-02-24 16:42:15) [GET]
+  [4;36;1mTemplateAsset Load (0.5ms)[0m   [0;1mSELECT * FROM `template_assets` [0m
+  [4;35;1mTemplatePage Load (0.0ms)[0m   [0mSELECT * FROM `template_pages` [0m
+  [4;36;1mColor Load (0.0ms)[0m   [0;1mSELECT * FROM `colors` [0m
+  [4;35;1mFont Load (0.0ms)[0m   [0mSELECT * FROM `fonts` [0m
+  [4;36;1mSize Load (0.0ms)[0m   [0;1mSELECT * FROM `sizes` [0m
+  [4;35;1mRow Load (0.0ms)[0m   [0mSELECT * FROM `rows` [0m
+  [4;36;1mAlignment Load (0.0ms)[0m   [0;1mSELECT * FROM `alignments` [0m
+Rendering template within layouts/application
+Rendering document/design
+  [4;35;1mTemplatePage Columns (10.5ms)[0m   [0mSHOW FIELDS FROM `template_pages`[0m
+  [4;36;1mTemplateAsset Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `template_assets`[0m
+  [4;35;1mFont Columns (5.5ms)[0m   [0mSHOW FIELDS FROM `fonts`[0m
+  [4;36;1mSize Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `sizes`[0m
+  [4;35;1mColor Columns (6.5ms)[0m   [0mSHOW FIELDS FROM `colors`[0m
+  [4;36;1mAlignment Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `alignments`[0m
+Rendered document/_static (26.5ms)
+Rendered document/_static (0.0ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.5ms)
+Rendered document/_static (0.0ms)
+  [4;35;1mRow Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `rows`[0m
+Rendered document/_dynamic (6.5ms)
+Rendered document/_static (0.0ms)
+Completed in 83ms (View: 13, DB: 46) | 200 OK [http://localhost/document/design]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:42:19) [GET]
+  Parameters: {"id"=>"84"}
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` [0m
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '84') LIMIT 1[0m
+  [4;35;1mTemplatePage Columns (10.5ms)[0m   [0mSHOW FIELDS FROM `template_pages`[0m
+  [4;36;1mTemplate Load (0.5ms)[0m   [0;1mSELECT * FROM `templates` WHERE (`templates`.`id` = 50) LIMIT 1[0m
+  [4;35;1mPapersize Load (0.0ms)[0m   [0mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;36;1mPapersize Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `papersizes`[0m
+  [4;35;1mTemplate Columns (9.5ms)[0m   [0mSHOW FIELDS FROM `templates`[0m
+Completed in 49ms (View: 4, DB: 32) | 200 OK [http://localhost/document/choose/84]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:42:25) [GET]
+  Parameters: {"id"=>"85"}
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` [0m
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '85') LIMIT 1[0m
+  [4;35;1mTemplatePage Columns (10.5ms)[0m   [0mSHOW FIELDS FROM `template_pages`[0m
+  [4;36;1mTemplate Load (0.0ms)[0m   [0;1mSELECT * FROM `templates` WHERE (`templates`.`id` = 50) LIMIT 1[0m
+  [4;35;1mPapersize Load (0.5ms)[0m   [0mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;36;1mPapersize Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `papersizes`[0m
+  [4;35;1mTemplate Columns (9.5ms)[0m   [0mSHOW FIELDS FROM `templates`[0m
+Completed in 48ms (View: 3, DB: 33) | 200 OK [http://localhost/document/choose/85]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#choose (for 127.0.0.1 at 2012-02-24 16:42:28) [GET]
+  Parameters: {"id"=>"87"}
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` [0m
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '87') LIMIT 1[0m
+  [4;35;1mTemplatePage Columns (10.5ms)[0m   [0mSHOW FIELDS FROM `template_pages`[0m
+  [4;36;1mTemplate Load (0.0ms)[0m   [0;1mSELECT * FROM `templates` WHERE (`templates`.`id` = 50) LIMIT 1[0m
+  [4;35;1mPapersize Load (0.5ms)[0m   [0mSELECT * FROM `papersizes` [0m
+Rendering document/choose
+  [4;36;1mPapersize Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `papersizes`[0m
+  [4;35;1mTemplate Columns (9.5ms)[0m   [0mSHOW FIELDS FROM `templates`[0m
+Completed in 49ms (View: 3, DB: 32) | 200 OK [http://localhost/document/choose/87]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#generate (for 127.0.0.1 at 2012-02-24 16:42:34) [POST]
+  Parameters: {"paper_size"=>"a4", "size"=>[""], "pos_x"=>["83"], "pos_y"=>["84"], "page_id"=>"87", "color"=>[""], "landscape"=>"0", "template_asset_id"=>["1"], "font"=>[""], "height"=>["15"], "align"=>[""], "borders"=>[""], "max_rows"=>[""], "width"=>["150"], "grid"=>[""]}
+  [4;35;1mTemplatePage Load (0.5ms)[0m   [0mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '87') LIMIT 1[0m
+  [4;36;1mTemplateField Load (0.0ms)[0m   [0;1mSELECT * FROM `template_fields` WHERE (template_page_id = 87) [0m
+  [4;35;1mTemplatePage Columns (10.5ms)[0m   [0mSHOW FIELDS FROM `template_pages`[0m
+  [4;36;1mTemplateField Columns (13.5ms)[0m   [0;1mSHOW FIELDS FROM `template_fields`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplateField Create (39.0ms)[0m   [0;1mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 83, 84, 49, 784, '', 1, '', 10, NULL, '', NULL, 87, 89, '')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTemplatePage Load (0.0ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '87') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.0ms)[0m   [0mSELECT * FROM `template_fields` WHERE (`template_fields`.`template_page_id` = 87) [0m
+  [4;36;1mTemplateAsset Columns (6.5ms)[0m   [0;1mSHOW FIELDS FROM `template_assets`[0m
+  [4;35;1mTemplateAsset Load (0.0ms)[0m   [0mSELECT * FROM `template_assets` WHERE (`template_assets`.`id` = 1) [0m
+  [4;36;1mTemplateField Load Including Associations (0.0ms)[0m   [0;1mSELECT `template_fields`.`id` AS t0_r0, `template_fields`.`template_page_id` AS t0_r1, `template_fields`.`template_asset_id` AS t0_r2, `template_fields`.`pos_x` AS t0_r3, `template_fields`.`pos_y` AS t0_r4, `template_fields`.`eps_x` AS t0_r5, `template_fields`.`eps_y` AS t0_r6, `template_fields`.`width` AS t0_r7, `template_fields`.`height` AS t0_r8, `template_fields`.`font` AS t0_r9, `template_fields`.`color` AS t0_r10, `template_fields`.`size` AS t0_r11, `template_fields`.`grid` AS t0_r12, `template_fields`.`num_rows` AS t0_r13, `template_fields`.`borders` AS t0_r14, `template_fields`.`align` AS t0_r15, `template_assets`.`id` AS t1_r0, `template_assets`.`name` AS t1_r1, `template_assets`.`content` AS t1_r2, `template_assets`.`asset_type_id` AS t1_r3, `template_assets`.`column` AS t1_r4 FROM `template_fields` LEFT OUTER JOIN `template_assets` ON `template_assets`.id = `template_fields`.template_asset_id WHERE (`template_assets`.`asset_type_id` = 3 AND `template_fields`.`template_page_id` = 87) LIMIT 1[0m
+Rendering document/generate
+Completed in 798ms (View: 1, DB: 72) | 200 OK [http://localhost/document/generate]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DocumentController#generate (for 127.0.0.1 at 2012-02-24 16:43:44) [POST]
+  Parameters: {"paper_size"=>"a4", "size"=>[""], "pos_x"=>["83"], "pos_y"=>["84"], "page_id"=>"87", "color"=>[""], "landscape"=>"0", "template_asset_id"=>["1"], "font"=>[""], "height"=>["16"], "align"=>[""], "borders"=>[""], "max_rows"=>[""], "width"=>["389"], "grid"=>[""]}
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '87') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.5ms)[0m   [0mSELECT * FROM `template_fields` WHERE (template_page_id = 87) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTemplateField Columns (14.5ms)[0m   [0mSHOW FIELDS FROM `template_fields`[0m
+  [4;36;1mTemplateField Destroy (18.5ms)[0m   [0;1mDELETE FROM `template_fields` WHERE `id` = 5[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTemplatePage Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `template_pages`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mTemplateField Create (16.0ms)[0m   [0;1mINSERT INTO `template_fields` (`size`, `pos_x`, `pos_y`, `eps_x`, `eps_y`, `color`, `template_asset_id`, `font`, `height`, `borders`, `align`, `num_rows`, `template_page_id`, `width`, `grid`) VALUES('', 83, 84, 49, 784, '', 1, '', 10, NULL, '', NULL, 87, 231, '')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mTemplatePage Load (0.5ms)[0m   [0;1mSELECT * FROM `template_pages` WHERE (`template_pages`.`id` = '87') LIMIT 1[0m
+  [4;35;1mTemplateField Load (0.5ms)[0m   [0mSELECT * FROM `template_fields` WHERE (`template_fields`.`template_page_id` = 87) [0m
+  [4;36;1mTemplateAsset Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `template_assets`[0m
+  [4;35;1mTemplateAsset Load (0.0ms)[0m   [0mSELECT * FROM `template_assets` WHERE (`template_assets`.`id` = 1) [0m
+  [4;36;1mTemplateField Load Including Associations (0.5ms)[0m   [0;1mSELECT `template_fields`.`id` AS t0_r0, `template_fields`.`template_page_id` AS t0_r1, `template_fields`.`template_asset_id` AS t0_r2, `template_fields`.`pos_x` AS t0_r3, `template_fields`.`pos_y` AS t0_r4, `template_fields`.`eps_x` AS t0_r5, `template_fields`.`eps_y` AS t0_r6, `template_fields`.`width` AS t0_r7, `template_fields`.`height` AS t0_r8, `template_fields`.`font` AS t0_r9, `template_fields`.`color` AS t0_r10, `template_fields`.`size` AS t0_r11, `template_fields`.`grid` AS t0_r12, `template_fields`.`num_rows` AS t0_r13, `template_fields`.`borders` AS t0_r14, `template_fields`.`align` AS t0_r15, `template_assets`.`id` AS t1_r0, `template_assets`.`name` AS t1_r1, `template_assets`.`content` AS t1_r2, `template_assets`.`asset_type_id` AS t1_r3, `template_assets`.`column` AS t1_r4 FROM `template_fields` LEFT OUTER JOIN `template_assets` ON `template_assets`.id = `template_fields`.template_asset_id WHERE (`template_assets`.`asset_type_id` = 3 AND `template_fields`.`template_page_id` = 87) LIMIT 1[0m
+Rendering document/generate
+Completed in 703ms (View: 1, DB: 71) | 200 OK [http://localhost/document/generate]

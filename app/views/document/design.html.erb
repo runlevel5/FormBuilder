@@ -1,0 +1,75 @@
+<div class="rto_template">
+<div class="assets">
+    Available templates:
+  <div class="asset_container template_pages">
+    <select name="template_page_id">
+      <option value=""></option>
+      <% @pages.each do |p|  %>
+        <option value="<%=  p.id %>" title="<%= p.name %>" ><%=  p.name %></option>
+      <% end  %>
+    </select>
+    <div class="render_detail"></div>
+  </div>
+  <br />
+
+
+    Libraries:
+<%
+    @assets.each do |a|
+      if a.asset_type_id == 1 || a.asset_type_id == 2
+        concat  render :partial => "static", :locals => {:a => a, :font => @font, :size => @size, :color => @color}
+      else
+        concat render :partial => "dynamic", :locals => {:a => a, :font => @font, :size => @size, :color => @color}
+      end
+    end
+%>
+    
+  <br />
+  
+  <div class="property">
+    Properties:
+    <div class="property_container">
+    </div>
+  </div>
+
+    <br />
+  <div class="asset_container">
+  <input type="button" name="generate" value="generate" />
+  </div>
+
+  <div class="asset_container returned_file">
+  </div>
+</div> <!-- end asset -->
+
+
+
+<form action="/document/generate" class="panel_form" method="POST">
+<div class="panel"></div>
+<input type="hidden" name="page_id" value="" />
+<input type="hidden" name="paper_size" value="" />
+<input type="hidden" name="landscape" value="" />
+</form>
+
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("select[name=template_page_id]").change(function(){
+    if($("select[name=template_page_id] option:selected").val() != ""){
+      $.ajax({
+        "url" : "/document/choose/" + $("select[name=template_page_id] option:selected").val(),
+        "type" : "GET",
+        "success" : function(data){
+          $(".render_detail").html(data);
+          $(".panel").html('<img src="/template/' + $("select[name=template_page_id] option:selected").attr("title") + '" />');          
+        }
+      });
+      
+    }else{
+      $(".panel").html("");
+      $(".render_detail").html("");
+    }
+  });
+});
+</script>
