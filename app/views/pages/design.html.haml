@@ -1,0 +1,45 @@
+.template
+  = form_tag [@template, @page], :method => :put, :id => 'update_page' do
+
+    #canvas
+      = image_tag @page.page.url(:original)
+      - @page.fields.each do |field|
+        .drag{:style => "position: absolute; top: #{field.pos_y}px; left: #{field.pos_x}px; width: #{field.width}px; height: #{field.height}px" }
+          = text_field_tag 'page[fields_attributes][][value]', field.value, :class => 'value'
+          = hidden_field_tag 'page[fields_attributes][][pos_x]', field.pos_x, :class => 'pos_x'
+          = hidden_field_tag 'page[fields_attributes][][pos_y]', field.pos_y, :class => 'pos_y'
+          = hidden_field_tag 'page[fields_attributes][][width]', field.width, :class => 'width'
+          = hidden_field_tag 'page[fields_attributes][][height]', field.height, :class => 'height'
+          = hidden_field_tag 'page[fields_attributes][][id]', field.id, :class => 'id'
+          = hidden_field_tag 'page[fields_attributes][][_destroy]', 0, :class => 'destroy'
+
+    #toolbox
+      Available pages:  
+    
+      .container.template_pages
+
+        = select_tag :page_id, options_from_collection_for_select(@pages, 'id', 'name', @page.id), :name => nil
+
+        - @pages.each do |p|
+          = hidden_field_tag "page_#{p.id}", design_template_page_path(@template, p), :name => nil
+        
+        .render_detail
+      %br
+
+      Fields on pages:
+      = @page.fields.count
+      %br
+
+      Widgets:
+
+      .container
+        .drag
+          = text_field_tag nil, 'Text Field', :name => nil, :class => 'value'
+          = hidden_field_tag nil, nil, :class => 'pos_x'
+          = hidden_field_tag nil, nil, :class => 'pos_y'
+          = hidden_field_tag nil, nil, :class => 'width'
+          = hidden_field_tag nil, nil, :class => 'height'
+
+      %br
+
+      = button_tag 'Save', :name => nil

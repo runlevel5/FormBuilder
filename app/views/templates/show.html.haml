@@ -1,0 +1,18 @@
+%h1
+  Name:
+  = @template.name
+
+%h2
+  Pages (
+  = @template.pages.count
+  )
+
+%ol
+  - @template.pages.each do |p|
+    %li
+      = link_to(image_tag(p.page.url(:thumb)), p.page.url(:original))
+      %hr
+
+= link_to 'Edit', edit_template_path(@template)
+|
+= link_to 'Back', templates_path
