@@ -3,24 +3,28 @@ require 'prawn/measurement_extensions'
 class Field < ActiveRecord::Base
   belongs_to :page
 
-  # convert pixels to cm to dot
-  def set_eps_coordinate
-    canvas_width = convert_pixels_to_cms(page.page.width.to_f).cm
-    canvas_height = convert_pixels_to_cms(page.page.height.to_f).cm
+  def eps_width
+    convert_pixels_to_inchs(width.to_f).send(:in).round
+  end
 
-    self.eps_width  = convert_pixels_to_cms(width.to_f).cm.round
-    self.eps_height = convert_pixels_to_cms(height.to_f).cm.round
+  def eps_height
+    convert_pixels_to_inchs(height.to_f).send(:in).round
+  end
 
-    self.eps_x = convert_pixels_to_cms(pos_x.to_f).cm.round
-    self.eps_y = (canvas_height - convert_pixels_to_cms(pos_y.to_f).cm).round
+  def eps_position
+    canvas_height = convert_pixels_to_inchs(page.page.height.to_f).send(:in)
 
-    self.save
+    eps_x = convert_pixels_to_inchs(pos_x.to_f).send(:in).round
+    eps_y = (canvas_height - convert_pixels_to_inchs(pos_y.to_f).send(:in)).round
+
+    [eps_x, eps_y]
   end
 
   private
 
-    def convert_pixels_to_cms(pixels, dpi = Rails.configuration.pdf_to_png_dpi)
-      (pixels / dpi) * 2.54
+    # prawn dpi is defaulted 
+    def convert_pixels_to_inchs(pixels)
+      pixels / 96
     end
 
 end

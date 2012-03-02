@@ -4,10 +4,6 @@ class CreateFields < ActiveRecord::Migration
       t.integer :page_id, :null => false
       t.integer :pos_x
       t.integer :pos_y
-      t.float :eps_x
-      t.float :eps_y
-      t.float :eps_width
-      t.float :eps_height
       t.integer :width
       t.integer :height
       t.text :value
