@@ -11,8 +11,9 @@ class Field < ActiveRecord::Base
     convert_pixels_to_inchs(height.to_f).send(:in).round
   end
 
+  # TODO: the position is not correct
   def eps_position
-    canvas_height = convert_pixels_to_inchs(page.page.height.to_f).send(:in)
+    canvas_height = page.page.height.to_f
 
     eps_x = convert_pixels_to_inchs(pos_x.to_f).send(:in).round
     eps_y = (canvas_height - convert_pixels_to_inchs(pos_y.to_f).send(:in)).round

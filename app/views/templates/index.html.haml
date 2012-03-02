@@ -16,6 +16,7 @@
         %td= template.pages.count
         %td= link_to 'Show', template
         %td= link_to 'Design', design_template_page_path(template, template.pages.first) if template.pages.count > 0
+        %td= link_to 'Print to PDF', print_template_path(template) if template.pages.count > 0
         %td= link_to 'Destroy', template, :confirm => 'Are you sure?', :method => :delete
 
 = link_to 'New Template', new_template_path

@@ -1,4 +1,15 @@
 class TemplatesController < ApplicationController
+  def print
+    @template = Template.find(params[:id])
+
+    output = @template.generate_pdf
+    if output
+      send_file output, :type => 'application/pdf', :disposition => 'inline' and return
+    else
+      redirect_to templates_url
+    end
+  end
+
   # GET /templates
   # GET /templates.json
   def index
